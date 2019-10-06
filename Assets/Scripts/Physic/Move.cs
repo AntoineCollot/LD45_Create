@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using LD45.People.Interations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,11 +15,14 @@ namespace LD45.Physic
         [SerializeField] float _jumpForce;
         [SerializeField] float _interval;
 
+        AvoidWater avoidWater;
+
         // Start is called before the first frame update
         void Awake()
         {
             m_rigidbody = GetComponent<Rigidbody2D>();
             gravityComponent = GetComponent<ApplyGravity>();
+            avoidWater = GetComponent<AvoidWater>();
         }
 
         private void Start()
@@ -37,11 +41,34 @@ namespace LD45.Physic
             if (!gravityComponent.IsGrounded)
                 return;
             Vector2 jumpDir;
+            bool moveToTarget;
+            Vector2 target = PointsOfInterest.ClosestPointOfInterest(m_rigidbody.position, out moveToTarget);
+            if(moveToTarget)
+            {
+                bool targetIsOnRight = targetIsOnItsRight(target);
 
-            if(targetIsOnItsRight(Cursor.Instance.CursorPosition))
-                jumpDir= Gravity.GetUpAt(transform.position).Rotate(-_jumpAngle);
+                if (avoidWater != null && avoidWater.enabled)
+                {
+                    bool waterNear;
+                    if (targetIsOnRight)
+                        waterNear = avoidWater.IsWaterNear(1);
+                    else
+                        waterNear = avoidWater.IsWaterNear(-1);
+
+                    if (waterNear)
+                        return;
+                }
+
+                if (targetIsOnRight)
+                    jumpDir = Gravity.GetUpAt(transform.position).Rotate(-_jumpAngle);
+                else
+                    jumpDir = Gravity.GetUpAt(transform.position).Rotate(_jumpAngle);
+
+            }
             else
-                jumpDir = Gravity.GetUpAt(transform.position).Rotate(_jumpAngle);
+            {
+                jumpDir = Gravity.GetUpAt(transform.position);
+            }
 
             m_rigidbody.AddForce(jumpDir * _jumpForce, ForceMode2D.Impulse);
         }

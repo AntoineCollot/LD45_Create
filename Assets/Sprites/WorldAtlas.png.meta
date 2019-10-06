@@ -5,6 +5,8 @@ TextureImporter:
     21300000: World_Base
     21300002: World_Background
     21300004: World_River
+    21300006: World_RockSword
+    21300008: World_Sword
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -95,7 +97,7 @@ TextureImporter:
         width: 651
         height: 651
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -115,7 +117,7 @@ TextureImporter:
         width: 691
         height: 684
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,13 +137,53 @@ TextureImporter:
         width: 457
         height: 573
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: c587a32865b21eb4684af1b1a0ea2506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: World_RockSword
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 209
+        width: 99
+        height: 115
+      alignment: 9
+      pivot: {x: 0.5562226, y: 0.5618453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cdcb13662a02b45afafbb5ce967b5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: World_Sword
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 241
+        width: 45
+        height: 33
+      alignment: 9
+      pivot: {x: 0.8710714, y: 0.14392044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b12a267cb803ad4aa41a4395ff0cfa8
       vertices: []
       indices: 
       edges: []

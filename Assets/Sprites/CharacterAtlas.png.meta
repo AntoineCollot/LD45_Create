@@ -4,6 +4,10 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Character_Member
     21300002: Character_Head
+    21300004: Character_Head_Woman
+    21300006: Character_Mermaid
+    21300008: Character_Crown
+    21300010: Character_AlienHead
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -33,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -121,6 +125,86 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3875d9b01bcb31b4dab05978ca213e20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Head_Woman
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 25
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5088156, y: 0.38723278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bc6ecfd600c5f4d85df14c9458cf0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Mermaid
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 19
+        width: 27
+        height: 18
+      alignment: 9
+      pivot: {x: 0.173045, y: 0.69955903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c292242a853e549b62d8ff9270ddc4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Crown
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 20
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3706d7340e84aec4bab505381e14d219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_AlienHead
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5118202, y: 0.016248068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de55ae399f2d8b408fb49dc79d60580
       vertices: []
       indices: 
       edges: []

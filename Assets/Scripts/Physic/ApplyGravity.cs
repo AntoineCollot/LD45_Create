@@ -9,6 +9,7 @@ namespace LD45.Physic
         Rigidbody2D m_rigidbody;
         public float standUpTorque;
         public bool IsGrounded { get; private set; }
+        public float gravityMultiplier = 1;
 
         // Start is called before the first frame update
         void Awake()
@@ -20,7 +21,7 @@ namespace LD45.Physic
         void FixedUpdate()
         {
             //gravity
-            m_rigidbody.AddForce(Gravity.GetGravityAt(transform.position),ForceMode2D.Force);
+            m_rigidbody.AddForce(Gravity.GetGravityAt(transform.position)* gravityMultiplier, ForceMode2D.Force);
 
             //Stand up only if not totally upside down
             float angle = Vector3.SignedAngle(Gravity.GetUpAt(transform.position), transform.up, Vector3.forward);

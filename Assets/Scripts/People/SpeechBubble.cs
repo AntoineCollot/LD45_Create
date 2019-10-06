@@ -61,6 +61,13 @@ namespace LD45.People
                 isSelected = false;
                 GetComponent<SpeechGravity>().enabled = true;
                 anim.speed = 1;
+
+                if (language.knownWord.Length > 0)
+                {
+                    Achievements.EditLanguage();
+                    if (Language.defaultWord == "")
+                        Language.defaultWord = language.knownWord;
+                }
             }
         }
 
@@ -94,6 +101,12 @@ namespace LD45.People
             selectedGraphic.SetActive(false);
             gravity.enabled = true;
             anim.speed = 1;
+
+            if(inputString.Length>0)
+                Achievements.EditLanguage();
+
+            if (Language.defaultWord == "")
+                Language.defaultWord = inputString;
         }
     }
 }

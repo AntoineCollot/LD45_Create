@@ -15,3 +15,19 @@ public static class Vector2Extension
         return v;
     }
 }
+
+public static class IntegerExtensions
+{
+    public static bool ReadBit(this int i, int bitNumber)
+    {
+        return (i & (1 << bitNumber - 1)) != 0;
+    }
+
+    public static void SetBit(this int i, int bitNumber, bool bitValue)
+    {
+        if(bitValue)
+            i |= 1 << bitNumber;
+        else
+            i &= ~(1 << bitNumber);
+    }
+}

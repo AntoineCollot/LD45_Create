@@ -18,14 +18,18 @@ namespace LD45.Physic
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (m_rigidbody.velocity.magnitude > maxSurviveVelocity)
+            if (collision.relativeVelocity.magnitude > maxSurviveVelocity)
             {
-                GameObject deathEffect = Instantiate(deathEffectPrefab, transform.position, Quaternion.identity, null);
-                Destroy(deathEffect, 1);
-                Destroy(gameObject);
-
-                Achievements.CharacterDied();
+                Die();
             }
+        }
+
+        public void Die()
+        {
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity, null);
+            Destroy(gameObject);
+
+            Achievements.CharacterDied();
         }
     }
 }
