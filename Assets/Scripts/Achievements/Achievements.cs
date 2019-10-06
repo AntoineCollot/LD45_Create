@@ -26,12 +26,13 @@ namespace LD45
         {"Drowning",new Achievement("Drowning","You are a terrible person.",false) },
         {"Mermaid",new Achievement("Mermaids","That was essential...",true) },
         {"King",new Achievement("Kings","Long live the king !",true) },
-        {"France",new Achievement("France","Baguette du fromage ?",true) },
+        {"France",new Achievement("France","They do love killing kings.",true) },
         {"Sex",new Achievement("Sex","Now that's pretty good !",true) },
         {"Aliens",new Achievement("Aliens","Some people are going to freak out about this...",true) },
         {"Race",new Achievement("Races","Uhh oh...",true) },
         {"Racism",new Achievement("Racims","For the record I do not support this.",false) },
-        {"overpopulation ",new Achievement("overpopulation ","Stop clicking everywhere like mad man !",false) }
+        {"Overpopulation",new Achievement("Overpopulation","Stop clicking everywhere like mad man !",false) },
+        {"Burial",new Achievement("Burial","Uhh, aren't we supposed to bury dead people ?",false) }
         };
 
         public static int achievementValidatedCount = 0;
@@ -101,6 +102,11 @@ namespace LD45
         public static void OverPopulation()
         {
             ValidateAchivement("Overpopulation");
+        }
+
+        public static void CharacterBuried()
+        {
+            ValidateAchivement("Burial");
         }
 
         public static void CharacterSpawned(People.Human.Sex sex,People.Human.Race race)

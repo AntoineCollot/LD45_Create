@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using LD45.People.Interations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -135,6 +136,14 @@ namespace LD45.People
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.tag == "Water")
+            {
+                Drawning.Instance.HitWater(GetComponent<Human>());
             }
         }
     }

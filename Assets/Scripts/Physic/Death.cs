@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using LD45.People;
+using LD45.People.Interations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

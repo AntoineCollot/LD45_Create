@@ -10,30 +10,25 @@ namespace LD45.People.Interations
         public Collider2D waterCollider;
         public GameObject drawningEffect;
 
-        // Start is called before the first frame update
-        void Start()
+        public static Drawning Instance;
+
+        private void Awake()
         {
-            GrabThings.onReleaseThing.AddListener(OnThingReleased);
+            Instance = this;
         }
 
-        void OnThingReleased(Rigidbody2D r)
+        public void HitWater(Human human)
         {
-            Human p = r.GetComponent<Human>();
-            if(p!=null)
-            {
-                if(!waterCollider.OverlapPoint(r.position))
-                    return;
 
-                switch (p.sex)
+                switch (human.sex)
                 {
                     case Human.Sex.Male:
-                        Drawn(p);
+                        Drawn(human);
                         break;
                     case Human.Sex.Female:
-                        MakeMermaid(p);
+                        MakeMermaid(human);
                         break;
                 }
-            }
         }
 
         void Drawn(Human p)

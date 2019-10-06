@@ -9,6 +9,7 @@ namespace LD45.God
     public class SpawnCharacters : MonoBehaviour
     {
         [SerializeField] GameObject _characterPrefab;
+        [SerializeField] GameObject _starEffect;
         public int firstWomanAt = 10;
         public int firstWhiteAt = 20;
         int characterSpawnedCount = 0;
@@ -28,6 +29,7 @@ namespace LD45.God
             {
                 Vector2 spawnPos = Cursor.Instance.CursorPosition;
                 GameObject newCharacter = Instantiate(_characterPrefab, spawnPos, Gravity.GetUpRotationAt(spawnPos), null);
+                Instantiate(_starEffect, spawnPos,Quaternion.identity, null);
                 characterSpawnedCount++;
                 Human h = newCharacter.GetComponent<Human>();
 

@@ -22,8 +22,12 @@ namespace LD45.People.Interations
             float sameRaceMaxAngle = 0;
             foreach(Human h1 in Human.All)
             {
+                if (h1.race == Human.Race.Alien)
+                    continue;
                 foreach (Human h2 in Human.All)
                 {
+                    if (h2.race == Human.Race.Alien)
+                        continue;
                     float angle = Gravity.Angle(h1.transform.position, h2.transform.position);
                     if(h1.race!=h2.race)
                     {

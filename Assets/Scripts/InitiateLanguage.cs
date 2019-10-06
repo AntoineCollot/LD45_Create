@@ -29,14 +29,15 @@ namespace LD45.People
         {
             float interval = baseInterval;
 
-            while(!Achievements.achievementDic["Language"].isDone)
+            while(true)// !Achievements.achievementDic["Language"].isDone
             {
                 Language[] speakers = FindObjectsOfType<Language>();
                 if(speakers.Length>0)
                     speakers[Random.Range(0,speakers.Length)].Speak();
 
                 yield return new WaitForSeconds(interval);
-                interval *= 2;
+                interval *= 1.5f;
+                interval = Mathf.Min(interval, 30);
             }
         }
     }

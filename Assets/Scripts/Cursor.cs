@@ -15,7 +15,7 @@ namespace LD45
         public int averageForceOnFrameCount;
 
         //Events
-        public enum ClickType { UI,Sky, World, Character}
+        public enum ClickType { UI,Sky, World, Character,Water}
         public class ClickEvent : UnityEvent<ClickType,Rigidbody2D> { }
         public static ClickEvent onMouseClick = new ClickEvent();
 
@@ -79,7 +79,10 @@ namespace LD45
             {
                 onMouseClick.Invoke(ClickType.World,null);
             }
-
+            else if (hit.collider != null && hit.collider.tag == "Water")
+            {
+                onMouseClick.Invoke(ClickType.Water, null);
+            }
             else
             {
                 onMouseClick.Invoke(ClickType.Sky,null);
